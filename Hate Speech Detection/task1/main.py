@@ -60,9 +60,9 @@ os.chdir(cwd)
 train_data['text']=train_data['text'].apply(preprocess)
 test_data['text']=test_data['text'].apply(preprocess)
 train_data['hateful']=['__label__'+str(s) for s in train_data['hateful']]
-train_data.to_csv('/home/aashish/Documents/Assignment_3/task1/training.txt',columns=['hateful','text'],index=False,header=None)
+train_data.to_csv('/home/luv/Documents/Assignment_3/task1/training.txt',columns=['hateful','text'],index=False,header=None)
 model=fasttext.train_supervised('training.txt')
-test_data.to_csv('/home/aashish/Documents/Assignment_3/task1/testing.txt',columns=['text'],index=False,header=None)
+test_data.to_csv('/home/luv/Documents/Assignment_3/task1/testing.txt',columns=['text'],index=False,header=None)
 f=open('testing.txt', 'r', encoding="utf-8")
 y_pred=[]
 read=f.readlines()
